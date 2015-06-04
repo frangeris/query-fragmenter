@@ -1,0 +1,16 @@
+{
+    "name": "frangeris/query-fragmenter",
+    "description": "Tool for url query string fragmentation using comparison operators",
+    "license": "The MIT License (MIT)",
+    "authors": [
+        {
+            "name": "Frangeris Peguero",
+            "email": "frangeris.20@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Query\\": "src/Query/"
+        }
+    }
+}
