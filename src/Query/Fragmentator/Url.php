@@ -2,9 +2,20 @@
 
 class Url
 {
+	/**
+	 * Instance of the class
+	 *
+	 * @var string
+	 */
 	private static $instance;
 
+	/**
+	 * Url to analize
+	 *
+	 * @var string
+	 */
 	protected static $url;
+
 	/**
 	 * Set the url to analize
 	 *
@@ -29,7 +40,7 @@ class Url
 	public function getComparisons()
 	{
 		$fragments = [];
-		$query = parse_url($this->url, PHP_URL_QUERY);
+		$query = parse_url(self::$url, PHP_URL_QUERY);
 		$params = explode('&', $query);
 
 		// Filter the fragments
