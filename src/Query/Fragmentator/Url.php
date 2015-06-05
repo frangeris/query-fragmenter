@@ -45,7 +45,7 @@ class Url
 
 		// Filter the fragments
 		foreach($params as $param)
-			$fragments[] = preg_split("#([<>!]?=)#i", $param, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+			$fragments[] = preg_split("#([<>!]?=)#i", urldecode($param), -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 
 		return $fragments;
 	}
