@@ -2,6 +2,9 @@
 
 class Url
 {
+	private static $instance;
+
+	protected static $url;
 	/**
 	 * Set the url to analize
 	 *
