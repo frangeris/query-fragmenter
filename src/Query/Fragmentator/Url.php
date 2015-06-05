@@ -24,7 +24,7 @@ class Url
 	 */
 	public static function load($url)
 	{
-		self::$url = parse_url($url);
+		self::$url = $url;
 
 		if (null == self::$instance)
 			self::$instance = new self;
