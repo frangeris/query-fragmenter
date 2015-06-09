@@ -49,4 +49,29 @@ class Url
 
 		return $fragments;
 	}
+
+	/**
+	 * Fragment sort param for get order by
+	 *
+	 * @return array
+	 */
+	public function getSorters()
+	{
+		$fragments = [];
+		$query = parse_url(self::$url, PHP_URL_QUERY);
+		parse_str($str, $params);
+
+		if (isset($params['sort']))
+		{
+			$vars = explode(',', $params['sort']);
+			foreach ($vars as $var)
+			{
+				$symbol = $var[0];
+				$field = preg_replace("/[^a-z0-9]/", null, $var);
+				$fragments[$field] = ('+' === $symbol)?'ASC' :'DESC';
+			}
+		}
+
+		return false;
+	}
 }
