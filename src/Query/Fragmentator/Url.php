@@ -59,7 +59,7 @@ class Url
 	{
 		$fragments = [];
 		$query = parse_url(self::$url, PHP_URL_QUERY);
-		parse_str($str, $params);
+		parse_str($query, $params);
 
 		if (isset($params['sort']))
 		{
