@@ -63,11 +63,12 @@ class Url
 
 		if (isset($params['sort']))
 		{
-			$vars = explode(',', $params['sort']);
+			$params['sort'] = urlencode($params['sort']);
+			$vars = explode('%2C', $params['sort']);
 			foreach ($vars as $var)
 			{
 				$symbol = $var[0];
-				$field = preg_replace("/[^a-z0-9]/", null, $var);
+				$field = preg_replace("/[^a-z0-9_]/i", null, $var);
 				$fragments[$field] = ('+' === $symbol)?'ASC' :'DESC';
 			}
 
