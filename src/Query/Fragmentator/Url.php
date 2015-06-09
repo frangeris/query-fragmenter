@@ -70,6 +70,8 @@ class Url
 				$field = preg_replace("/[^a-z0-9]/", null, $var);
 				$fragments[$field] = ('+' === $symbol)?'ASC' :'DESC';
 			}
+
+			return $fragments;
 		}
 
 		return false;
